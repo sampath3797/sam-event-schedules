@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "eventschedules": {
+      "projectType": "library",
+      "root": "projects/eventschedules",
+      "sourceRoot": "projects/eventschedules/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/eventschedules/tsconfig.lib.json",
+            "project": "projects/eventschedules/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/eventschedules/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/eventschedules/src/test.ts",
+            "tsConfig": "projects/eventschedules/tsconfig.spec.json",
+            "karmaConfig": "projects/eventschedules/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/eventschedules/tsconfig.lib.json",
+              "projects/eventschedules/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "eventschedules"
+}

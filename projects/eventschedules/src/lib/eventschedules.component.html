@@ -1,0 +1,30 @@
+<p>
+    Event Schedules
+  </p>
+  
+  <table *ngIf="totalDatesArray?.length > 0 && users?.length > 0">
+    <tr>
+      <th rowspan="2">User Name</th>
+      <th *ngFor="let eachDate of totalDatesArray">
+        {{eachDate.date | dateFormat:'MMM-yy'}}
+      </th>
+    </tr>
+    <tr>
+      <th *ngFor="let eachDate of totalDatesArray">
+        {{eachDate.date | dateFormat:'DD'}}
+      </th>
+    </tr>
+    <tr *ngFor="let eachUser of users; let i = index">
+      <th>{{eachUser}}</th>
+      <th
+        *ngFor="let eachDate of dateArray[i].dates"
+        title="{{eachDate.eventName}}"
+        [style.background]="eachDate.bgcolor"
+      ></th>
+    </tr>
+    <th>Total Matched Percent</th>
+    <th *ngFor="let eachDate of totalDatesArray">
+      ({{eachDate.matched}}/{{users.length}})<br />{{((eachDate.matched/users.length)*100).toFixed(2)}}%
+    </th>
+  </table>
+  

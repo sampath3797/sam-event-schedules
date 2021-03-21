@@ -1,6 +1,7 @@
 {
   "name": "sam-event-schedules",
   "version": "1.0.0",
+  "author": "sampath",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

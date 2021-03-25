@@ -19,6 +19,7 @@ export class EventschedulesComponent implements OnChanges{
     fromDate: moment.Moment;
     toDate: moment.Moment;
     eventName: string;
+    cellColor: string;
   }[];
 
   // calendarStartDate = moment('1/19/2017', 'MM-DD-YYYY');
@@ -38,7 +39,7 @@ export class EventschedulesComponent implements OnChanges{
     matchedPercent: string;
   }[] = [];
 
-  userAppt: { user: string; date: moment.Moment; eventName: string }[] = [];
+  userAppt: { user: string; date: moment.Moment; eventName: string, cellColor: string }[] = [];
 
   constructor() {
     // this.humanized = moment.duration(moment().diff(this.startDate)).humanize();
@@ -67,7 +68,8 @@ export class EventschedulesComponent implements OnChanges{
           this.userAppt.push({
             user: x.user,
             date: moment(i),
-            eventName: x.eventName
+            eventName: x.eventName,
+            cellColor: x.cellColor
           });
         }
       });
@@ -117,7 +119,7 @@ export class EventschedulesComponent implements OnChanges{
   
             this.dateArray[usrIdx].dates.push({
               date: m,
-              bgcolor: 'blue',
+              bgcolor: isMatchedDate.cellColor,
               eventName: isMatchedDate.eventName
             });
           } // for no matching dates with out any cell color

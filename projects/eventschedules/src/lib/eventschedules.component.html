@@ -2,9 +2,9 @@
     Event Schedules
   </p>
   
-  <table *ngIf="totalDatesArray?.length > 0 && users?.length > 0">
+  <table class="table-scheduler" *ngIf="totalDatesArray?.length > 0 && users?.length > 0">
     <tr>
-      <th rowspan="2">User Name</th>
+      <th rowspan="2" class="username">User Name</th>
       <th *ngFor="let eachDate of totalDatesArray">
         {{eachDate.date | dateFormat:'MMM-yy'}}
       </th>
@@ -15,7 +15,7 @@
       </th>
     </tr>
     <tr *ngFor="let eachUser of users; let i = index">
-      <th>{{eachUser}}</th>
+      <th class="username">{{eachUser}}</th>
       <th
         *ngFor="let eachDate of dateArray[i].dates"
         title="{{eachDate.eventName}}"

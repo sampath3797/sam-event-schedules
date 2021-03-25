@@ -32,3 +32,18 @@ p {
     width: 100%;
     z-index: -1;
   }
+  
+  .username{
+  position: absolute;
+  width: 13.5em;
+  left: 0px;
+  top: auto;
+  }
+  
+  .table-scheduler{
+  width: 99%;
+  overflow-x: scroll;
+  margin-left: 2.2em;
+  overflow-y: visible;
+  padding: 0;
+  }

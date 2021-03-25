@@ -44,23 +44,29 @@ calendarEndDate = moment('1/29/2017', 'MM-DD-YYYY');
 
 users: string[] = ['A', 'B', 'C', 'D', 'E', 'F'];
 
+cellColor property added for each event object.
 
-userAppts: {
+eventName property used to show as tooltip of event name value on mouse hover of the cell.
+
+userAppts: {    
     user: string;
     fromDate: moment.Moment;
     toDate: moment.Moment;
     eventName: string;
-  }[] = [
-    {
+    cellColor: string;   
+  }[] = [    
+    {   
       user: 'A',
       fromDate: moment('1/19/2017', 'MM-DD-YYYY'),
       toDate: moment('1/23/2017', 'MM-DD-YYYY'),
-      eventName: 'leave scheduled from 20 Jan 2017 to 23 Jan 2017'
-    },
-    {
+      eventName: 'leave scheduled from 20 Jan 2017 to 23 Jan 2017',
+      cellColor: 'blue'   
+    },    
+    {    
       user: 'B',
       fromDate: moment('1/22/2017', 'MM-DD-YYYY'),
       toDate: moment('1/23/2017', 'MM-DD-YYYY'),
-      eventName: 'planned leave from'
-    }
+      eventName: 'planned leave from',
+      cellColor: 'red'
+    }   
 ]

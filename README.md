@@ -27,6 +27,8 @@ imports: [
 Usage in your project templates as follows
 **********************************************************
 <lib-eventschedules
+  [divWidth]="500px"
+  [divHeight]="200px"
   [calendarStartDate]="calendarStartDate"
   [calendarEndDate]="calendarEndDate"
   [users]="users"
@@ -70,3 +72,11 @@ userAppts: {
       cellColor: 'red'
     }   
 ]
+
+/*-------------------- */
+Latest Updates
+/*-------------------- */
+
+1. Event Table width and height input parameter included for overflow scroll.
+
+2. Row Header and First column username freezed when scrolled horizontal and vertical.

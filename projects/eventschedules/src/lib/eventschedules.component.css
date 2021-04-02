@@ -1,49 +1,70 @@
-p {
-    font-family: Lato;
-  }
-  table,
-  th,
-  td {
-    border: 2px solid black;
-    border-collapse: collapse;
-  }
-  
-  table {
-    overflow: hidden;
-  }
-  
-  tr:hover,
-  th:hover {
-    border: 3px solid red;
-  }
-  
-  td,
-  th {
-    position: relative;
-  }
-  td:hover::after,
-  th:hover::after {
-    content: "";
-    position: absolute;
-    border: 3px solid red;
-    left: 0;
-    top: -5000px;
-    height: 10000px;
-    width: 100%;
-    z-index: -1;
-  }
-  
-  .username{
+.table-scheduler p {
+  font-family: Lato;
+}
+
+/*table border css*/
+table,
+ th,
+ td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+/* outer div scroll */
+.outer {
+  overflow: scroll;
+}
+
+/*to freeze username cell on horizontal and vertical scroll*/
+.usrHead {
+  top: 0;
+  left: 0;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  z-index: 20;
+  background-color: rgb(228, 236, 234);
+}
+
+/*to freeze date row on vertical scroll*/
+.usrDtHead {
+  top: 40px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  z-index: 10;
+  background-color: rgb(228, 236, 234);
+}
+
+/*to freeze month-year row on vertical scroll*/
+.usrMthHead {
+  top: 0;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  z-index: 5;
+  background-color: rgb(228, 236, 234);
+}
+
+/*to freeze user column on horizontal scroll*/
+.echUsr {
+  left: 0;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  z-index: 10;
+  background-color: rgb(228, 236, 234);
+}
+
+/* on mouse over hightligt column */
+.table-scheduler th:hover::after {
+  content: "";
   position: absolute;
-  width: 13.5em;
-  left: 0px;
-  top: auto;
-  }
-  
-  .table-scheduler{
-  width: 99%;
-  overflow-x: scroll;
-  margin-left: 2.2em;
-  overflow-y: visible;
-  padding: 0;
-  }
+  border: 3px solid red;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* on mouse over hightligt row */
+.table-scheduler tr:hover {
+  border: 3px solid red;
+}

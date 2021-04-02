@@ -11,10 +11,25 @@ const moment = moment_
 })
 export class EventschedulesComponent implements OnChanges{
 
-  @Input() calendarStartDate: moment.Moment;
-  @Input() calendarEndDate: moment.Moment;
+  /* width of event table eg:-  500px;*/
+  @Input() divWidth: string;
+  
+  /* height of event table eg:-  200px;*/
+  @Input() divHeight: string; 
+
+  /* event table start date*/
+  @Input() calendarStartDate: moment.Moment; 
+
+  /* event table end date */
+  @Input() calendarEndDate: moment.Moment;   
+
+  /* first column list eg:- user names etc. */
   @Input() users: string[];
-  @Input() userAppts: {
+  
+  /* user event object for drawing events 
+  as per fromDate and toDate on table
+   with cell color and tootip as eventName property */
+  @Input() userAppts: {                 
     user: string;
     fromDate: moment.Moment;
     toDate: moment.Moment;
@@ -41,21 +56,20 @@ export class EventschedulesComponent implements OnChanges{
 
   userAppt: { user: string; date: moment.Moment; eventName: string, cellColor: string }[] = [];
 
-  constructor() {
-    // this.humanized = moment.duration(moment().diff(this.startDate)).humanize();
-    // this.humanizedNow = moment.duration(moment().diff(moment())).humanize();
-
-    // if you need to force to number of days
-    // this.daysFrom2017 = this.currentDate.diff(moment('1/1/2017'), 'days');
-
-    // if you need to force to number of weeks
-    // this.weeks = moment().diff(this.startDate, 'week');
-
-    
-  }
+  constructor() {  }
 
   ngOnChanges()
   {
+    if(!this.divWidth)
+    {
+      this.divWidth = '500px';
+    }
+
+    if(!this.divHeight)
+    {
+      this.divHeight = '200px';
+    }
+    
     if(this.userAppts)
     {
       this.userAppts.forEach((x, xIdx) => 

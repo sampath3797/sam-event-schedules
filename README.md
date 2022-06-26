@@ -12,7 +12,7 @@ before using this library, install moment from npmjs
 **********************************************************
 Usage :   Include in AppModule as follows
 **********************************************************
-import {EventschedulesModule} from 'eventschedules';
+```import {EventschedulesModule} from 'eventschedules';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ imports: [
 	.......
 		]
 
-});
+});```
 
 
 **********************************************************

@@ -51,9 +51,9 @@ calendarEndDate = moment('1/29/2017', 'MM-DD-YYYY');
 
 users: string[] = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-cellColor property added for each event object.
+// cellColor property added for each event object.
 
-eventName property used to show as tooltip of event name value on mouse hover of the cell.
+// eventName property used to show as tooltip of event name value on mouse hover of the cell.
 
 userAppts: {    
     userAppts: {
@@ -86,17 +86,4 @@ Latest Updates
 1. Event Table width and height input parameter included for overflow scroll.
 
 2. Row Header and First column username freezed when scrolled horizontal and vertical.
-  }[] = [
-    {
-      user: 'A',
-      fromDate: moment('1/19/2017', 'MM-DD-YYYY'),
-      toDate: moment('1/23/2017', 'MM-DD-YYYY'),
-      eventName: 'leave scheduled from 20 Jan 2017 to 23 Jan 2017'
-    },
-    {
-      user: 'B',
-      fromDate: moment('1/22/2017', 'MM-DD-YYYY'),
-      toDate: moment('1/23/2017', 'MM-DD-YYYY'),
-      eventName: 'planned leave from'
-    }
-]
+ 

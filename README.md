@@ -30,6 +30,7 @@ imports: [
 **********************************************************
 Usage in your project templates as follows
 **********************************************************
+```
 <lib-eventschedules
   [divWidth]="500px"
   [divHeight]="200px"
@@ -39,11 +40,11 @@ Usage in your project templates as follows
   [userAppts]="userAppts"
   >  
   </lib-eventschedules>
-
+```
 **********************************************************
 pass the input parameters as per the following pattern
 **********************************************************
-
+```
 calendarStartDate = moment('1/19/2017', 'MM-DD-YYYY');
 
 calendarEndDate = moment('1/29/2017', 'MM-DD-YYYY');
@@ -77,7 +78,7 @@ userAppts: {
       cellColor: 'red'
     }   
 ]
-
+```
 /*-------------------- */
 Latest Updates
 /*-------------------- */
